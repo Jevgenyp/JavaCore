@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2c5a8aae-aaf7-4b27-9853-b02821fe0cde" name="Changes" comment="upd">
-      <change afterPath="$PROJECT_DIR$/src/org/Lesson2/hw/ArrayUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/org/Lesson2/hw/HwMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="2c5a8aae-aaf7-4b27-9853-b02821fe0cde" name="Changes" comment="upd Hw2">
+      <change afterPath="$PROJECT_DIR$/src/org/Lesson3/hw/Employee.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/Lesson3/hw/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/Lesson3/hw/Manager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,7 +123,15 @@
       <option name="project" value="LOCAL" />
       <updated>1698088643288</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="upd Hw2">
+      <option name="closed" value="true" />
+      <created>1698176368851</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1698176368851</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -142,7 +149,8 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Dockerfile added" />
     <MESSAGE value="upd" />
-    <option name="LAST_COMMIT_MESSAGE" value="upd" />
+    <MESSAGE value="upd Hw2" />
+    <option name="LAST_COMMIT_MESSAGE" value="upd Hw2" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
