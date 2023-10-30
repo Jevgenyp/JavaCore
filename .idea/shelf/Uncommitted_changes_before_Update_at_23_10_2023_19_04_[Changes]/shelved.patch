@@ -1,0 +1,336 @@
+Index: src/org/Lesson2/CheckBalance.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/org/Lesson2/CheckBalance.java b/src/org/Lesson2/CheckBalance.java
+new file mode 100644
+--- /dev/null	(date 1697480838657)
++++ b/src/org/Lesson2/CheckBalance.java	(date 1697480838657)
+@@ -0,0 +1,39 @@
++package org.Lesson2;
++
++public class CheckBalance {
++    public static void main(String[] args) {
++        int[] array1 = {3, -2, -2, 2, 1};
++        int[] array2 = {2, 3, 2, 2, 1};
++        int[] array3 = {10, 1, 2, 3, 4};
++
++        System.out.println(checkBalance(array1));
++        System.out.println(checkBalance(array2));
++        System.out.println(checkBalance(array3));
++    }
++
++    public static boolean checkBalance(int[] arr) {
++        for (int i = 0; i < arr.length; i++) {
++            if (isBalanced(arr, i)) {
++                return true;
++            }
++        }
++        return false;
++    }
++
++    private static boolean isBalanced(int[] arr, int pivot) {
++        int leftSum = 0;
++        int rightSum = 0;
++
++
++        for (int i = 0; i < pivot; i++) {
++            leftSum += arr[i];
++        }
++
++
++        for (int i = pivot; i < arr.length; i++) {
++            rightSum += arr[i];
++        }
++
++        return leftSum == rightSum;
++    }
++}
+Index: src/org/Lesson2/DynamicArray.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/org/Lesson2/DynamicArray.java b/src/org/Lesson2/DynamicArray.java
+new file mode 100644
+--- /dev/null	(date 1697481123370)
++++ b/src/org/Lesson2/DynamicArray.java	(date 1697481123370)
+@@ -0,0 +1,23 @@
++package org.Lesson2;
++
++import java.util.Arrays;
++
++public class DynamicArray {
++    public static void main(String[] args) {
++        int[] originalArray = {1, 2, 3};
++        int elementToAdd = 4;
++
++        int[] newArray = addElement(originalArray, elementToAdd);
++
++        System.out.println(Arrays.toString(newArray)); // Вывод нового массива
++    }
++
++    public static int[] addElement(int[] arr, int element) {
++        int length = arr.length;
++        int[] newArray = Arrays.copyOf(arr, length + 1); // Создание нового массива большего размера
++
++        newArray[length] = element; // Добавление элемента в конец нового массива
++
++        return newArray; // Возвращение нового массива
++    }
++}
+Index: src/org/Lesson2/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/org/Lesson2/Main.java b/src/org/Lesson2/Main.java
+new file mode 100644
+--- /dev/null	(date 1697478096132)
++++ b/src/org/Lesson2/Main.java	(date 1697478096132)
+@@ -0,0 +1,48 @@
++package org.Lesson2;
++
++public class Main {
++    //Задача: Задать одномерный массив. Написать методы поиска в нём
++    //минимального и максимального элемента;
++    public static void main(String[] args) {
++        int[] array = {10, 5, 8, 2, 15, 3};
++
++        int minElement = findMin(array);
++        int maxElement = findMax(array);
++
++        System.out.println("Минимальный элемент: " + minElement);
++        System.out.println("Максимальный элемент: " + maxElement);
++    }
++
++    public static int findMin(int[] arr) {
++        if (arr.length == 0) {
++            throw new IllegalArgumentException("Массив пуст");
++        }
++
++        int min = arr[0];
++        for (int i = 1; i < arr.length; i++) {
++            if (arr[i] < min) {
++                min = arr[i];
++            }
++        }
++
++        return min;
++    }
++
++    public static int findMax(int[] arr) {
++        if (arr.length == 0) {
++            throw new IllegalArgumentException("Массив пуст");
++        }
++
++        int max = arr[0];
++        for (int i = 1; i < arr.length; i++) {
++            if (arr[i] > max) {
++                max = arr[i];
++            }
++        }
++
++        return max;
++    }
++
++
++}
++
+Index: src/org/Lesson2/SqrMatrix.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/org/Lesson2/SqrMatrix.java b/src/org/Lesson2/SqrMatrix.java
+new file mode 100644
+--- /dev/null	(date 1697478096138)
++++ b/src/org/Lesson2/SqrMatrix.java	(date 1697478096138)
+@@ -0,0 +1,31 @@
++package org.Lesson2;
++
++/*
++    Создать квадратный целочисленный массив (количество строк и
++столбцов одинаковое), заполнить его диагональные элементы единицами,
++используя цикл(ы)
++ */
++
++public class SqrMatrix {
++    public static void main(String[] args) {
++        int[][] matrix = new int[5][5];
++        fillMatrixDiagonalsOnes(matrix);
++        printMatrix(matrix);
++    }
++
++    public static void fillMatrixDiagonalsOnes(int[][] matrix) {
++        for (int i = 0; i < matrix.length; i++) {
++            matrix[i][i] = 1;
++            matrix[i][matrix.length - 1 - i] = 1;
++        }
++    }
++
++    public static void printMatrix(int[][] matrix){
++        for(int i = 0; i < matrix.length; i++) {
++            for (int j = 0; j < matrix[0].length; j++) {
++                System.out.print(matrix[i][j] + " ");
++            }
++            System.out.println();
++        }
++    }
++}
+\ No newline at end of file
+Index: src/org/Lesson2/CountingSort.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/org/Lesson2/CountingSort.java b/src/org/Lesson2/CountingSort.java
+new file mode 100644
+--- /dev/null	(date 1697482535820)
++++ b/src/org/Lesson2/CountingSort.java	(date 1697482535820)
+@@ -0,0 +1,40 @@
++package org.Lesson2;
++
++public class CountingSort {
++    public static void main(String[] args) {
++        int[] array = {2, 1, 0, 4, 3, 0, 0, 1, 2};
++        countingSort(array, 5); // 5 - максимальное значение в массиве
++        printArray(array);
++    }
++
++    public static void countingSort(int[] arr, int maxRange) {
++        int[] count = new int[maxRange + 1];
++        int[] output = new int[arr.length];
++
++        // Подсчитываем количество каждого элемента
++        for (int num : arr) {
++            count[num]++;
++        }
++
++        // Заполняем output отсортированными значениями
++        int index = 0;
++        for (int i = 0; i <= maxRange; i++) {
++            while (count[i] > 0) {
++                output[index] = i;
++                index++;
++                count[i]--;
++            }
++        }
++
++        // Копируем отсортированный массив обратно в исходный
++        System.arraycopy(output, 0, arr, 0, arr.length);
++    }
++
++    public static void printArray(int[] arr) {
++        for (int num : arr) {
++            System.out.print(num + " ");
++        }
++        System.out.println();
++    }
++}
++
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><project version=\"4\">\r\n  <component name=\"ProjectRootManager\" version=\"2\" project-jdk-name=\"openjdk-21\" project-jdk-type=\"JavaSDK\">\r\n    <output url=\"file://$PROJECT_DIR$/out\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision 8aca9bbb2e829fc8a369f0f95979b4d2d3d61461)
++++ b/.idea/misc.xml	(date 1698080388819)
+@@ -1,5 +1,9 @@
++<?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+-  <component name="ProjectRootManager" version="2" project-jdk-name="openjdk-21" project-jdk-type="JavaSDK">
++  <component name="JavadocGenerationManager">
++    <option name="OUTPUT_DIRECTORY" value="$PROJECT_DIR$/src" />
++  </component>
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" project-jdk-name="openjdk-21" project-jdk-type="JavaSDK">
+     <output url="file://$PROJECT_DIR$/out" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"2c5a8aae-aaf7-4b27-9853-b02821fe0cde\" name=\"Changes\" comment=\"\">\r\n      <change afterPath=\"$PROJECT_DIR$/compose-dev.yaml\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/Dockerfile\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/misc.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/misc.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/app/Main.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/app/Main.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/logic/NoteManager.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/logic/NoteManager.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/notes.txt\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/notes.txt\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/app/Main.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/app/Main.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/logic/NoteManager.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/logic/NoteManager.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/utils/FileWriter.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/utils/FileWriter.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 5\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2WXE9sDao3PlAzCDjvsUJiND2CA\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\r\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;\r\n  }\r\n}</component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"2c5a8aae-aaf7-4b27-9853-b02821fe0cde\" name=\"Changes\" comment=\"\" />\r\n      <created>1696870377677</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1696870377677</updated>\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <option name=\"ADD_EXTERNAL_FILES_SILENTLY\" value=\"true\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 8aca9bbb2e829fc8a369f0f95979b4d2d3d61461)
++++ b/.idea/workspace.xml	(date 1698080388815)
+@@ -4,17 +4,14 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="2c5a8aae-aaf7-4b27-9853-b02821fe0cde" name="Changes" comment="">
+-      <change afterPath="$PROJECT_DIR$/compose-dev.yaml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/Dockerfile" afterDir="false" />
++    <list default="true" id="2c5a8aae-aaf7-4b27-9853-b02821fe0cde" name="Changes" comment="Dockerfile added">
++      <change afterPath="$PROJECT_DIR$/src/org/Lesson2/CheckBalance.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/org/Lesson2/CountingSort.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/org/Lesson2/DynamicArray.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/org/Lesson2/Main.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/org/Lesson2/SqrMatrix.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/app/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/Main.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/logic/NoteManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/logic/NoteManager.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/notes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/notes.txt" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/app/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Main.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/logic/NoteManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/NoteManager.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/utils/FileWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/FileWriter.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -45,14 +42,18 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent">{
+-  &quot;keyToString&quot;: {
+-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;
++  <component name="PropertiesComponent"><![CDATA[{
++  "keyToString": {
++    "ASKED_ADD_EXTERNAL_FILES": "true",
++    "RunOnceActivity.OpenProjectViewOnStart": "true",
++    "RunOnceActivity.ShowReadmeOnStart": "true",
++    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
++    "last_opened_file_path": "C:/Users/Jev/Desktop/unit-tests-1",
++    "project.structure.last.edited": "Project",
++    "project.structure.proportion": "0.0",
++    "project.structure.side.proportion": "0.0"
+   }
+-}</component>
++}]]></component>
+   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+   <component name="TaskManager">
+     <task active="true" id="Default" summary="Default task">
+@@ -62,9 +63,20 @@
+       <option name="presentableId" value="Default" />
+       <updated>1696870377677</updated>
+     </task>
++    <task id="LOCAL-00001" summary="Dockerfile added">
++      <option name="closed" value="true" />
++      <created>1696924111888</created>
++      <option name="number" value="00001" />
++      <option name="presentableId" value="LOCAL-00001" />
++      <option name="project" value="LOCAL" />
++      <updated>1696924111888</updated>
++    </task>
++    <option name="localTasksCounter" value="2" />
+     <servers />
+   </component>
+   <component name="VcsManagerConfiguration">
+     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
++    <MESSAGE value="Dockerfile added" />
++    <option name="LAST_COMMIT_MESSAGE" value="Dockerfile added" />
+   </component>
+ </project>
+\ No newline at end of file
