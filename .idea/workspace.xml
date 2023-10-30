@@ -4,10 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2c5a8aae-aaf7-4b27-9853-b02821fe0cde" name="Changes" comment="upd Hw2">
-      <change afterPath="$PROJECT_DIR$/src/org/Lesson3/hw/Employee.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/org/Lesson3/hw/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/org/Lesson3/hw/Manager.java" afterDir="false" />
+    <list default="true" id="2c5a8aae-aaf7-4b27-9853-b02821fe0cde" name="Changes" comment="upd Hw3">
+      <change afterPath="$PROJECT_DIR$/src/org/Lesson4/hw/Authentication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/Lesson4/hw/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/Lesson4/hw/WrongLoginException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/Lesson4/hw/WrongPasswordException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/Lesson4/hw/hw2/Customer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/Lesson4/hw/hw2/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/Lesson4/hw/hw2/Order.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/Lesson4/hw/hw2/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/Lesson4/hw/hw2/Shop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,7 +138,15 @@
       <option name="project" value="LOCAL" />
       <updated>1698176368851</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="upd Hw3">
+      <option name="closed" value="true" />
+      <created>1698178055619</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1698178055619</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -150,7 +165,8 @@
     <MESSAGE value="Dockerfile added" />
     <MESSAGE value="upd" />
     <MESSAGE value="upd Hw2" />
-    <option name="LAST_COMMIT_MESSAGE" value="upd Hw2" />
+    <MESSAGE value="upd Hw3" />
+    <option name="LAST_COMMIT_MESSAGE" value="upd Hw3" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
